@@ -1,0 +1,202 @@
+---
+title: "collaborative github intro"
+author: "Anna Krystalli"
+date: "22 July 2016"
+output: 
+    revealjs::revealjs_presentation:
+        theme: league
+        highlight: pygments
+        center: true
+        data-background-color: #476b6b
+        smaller: true
+        fig_height: 3
+        reveal_options:
+            previewLinks: true
+
+---
+
+# intro
+
+## github for collaboration (in RStudio)
+
+![](http://www.palermo.edu/Archivos_content/ingenieria/top/130712_git_github_topdenota1.jpg)
+
+
+## github & science
+
+> The need for a logical way to organize and control revisions has existed for almost as long as writing has existed, but revision control became much more important, and complicated, when the era of computing began.
+
+## version control
+
+- long been used to maintain code repositories in the software industry.
+    - especially in open source software.
+    
+- science increasingly computational.
+    - demands for increased openness.
+
+<br>
+
+
+
+
+## {data-background-iframe="http://billmills.github.io/scienceXpython/"}
+
+<br>
+<br>
+
+http://billmills.github.io/scienceXpython/
+
+## modern science workflows
+
+***can be overwhelming***
+
+![](images/workflows.png)
+
+## succesful modern science workflows
+
+***can be extremely powerful***
+
+![](images/collab.png)
+
+## github for science
+
+[![](images/git4sci.png)](http://scfbm.biomedcentral.com/articles/10.1186/1751-0473-8-7)
+
+
+> ideal for managing the full suite of research outputs such as datasets, statistical code, figures, lab notes, and manuscripts.
+
+## Rstudio for r users 
+
+![](https://status.github.com/images/invertocat.png)
+![](https://pbs.twimg.com/profile_images/487277095681150976/aEp2vlJy.png)
+
+## invest in next generation science skills
+
+...or get left behind
+
+# empowering collaboration
+
+## repos
+
+centralising information e.g. [**ROpenSci / rfishbase**](https://github.com/ropensci/rfishbase)
+![](images/repo.gif)
+
+## issues
+
+project management
+
+![](images/issues.gif)
+
+## commits 
+
+project tracking
+
+![](images/track.gif)
+
+# fostering reproducibility
+
+## commits
+
+traceability
+
+![](images/commits.gif)
+
+## entire process of project evolution reproducible
+
+# demo
+
+## start with a repo
+
+## fork it
+
+- make your **own copy of the repository** on github
+- fork are linked and traceable
+
+## 
+
+## clone: copy repo link
+
+- use link to pull down a local copy
+- manage process through **projects** in **Rstudio**
+
+
+
+
+## create new project
+
+- checkout from github
+- defaults to gthub repo name 
+
+
+## 
+
+![](images/newproj.gif)
+
+## make a change
+
+- open **`params_tmpl.R`**
+- save as new `.R` in **`params/`** folder.
+
+## commit
+
+- make small commits often
+- write informative messages
+
+##
+
+
+
+## push
+
+- push changes up to github
+
+## create pull request
+
+- create request to merge fork to master
+
+# exercise
+
+## your mission
+
+- fork the repo
+- link it up to an Rstudio project
+- create a new file params `.R` script. Name it using your initials (use 3 to be safe)
+- enter parameters for your species.
+
+
+
+ß
+
+$(function () {
+    // on page load  replace all src URLs
+
+    $('.animated-gif').each(function (i, e) {
+        disableGif(e)
+    });
+});
+Reveal.addEventListener('slidechanged', initAnimatedGifs);
+Reveal.addEventListener('ready', initAnimatedGifs);
+
+function initAnimatedGifs(event) {
+    $('.animated-gif', event.currentSlide).each(function (i, e) {
+        enableGif(e)
+    });
+
+    if (event.previousSlide)
+        $('.animated-gif', event.previousSlide).each(function (i, e) {
+            disableGif(e)
+
+        });
+}
+
+function enableGif(e) {
+    var src = $(e).attr("src")
+    $(e).attr('src', src.replace('-image.gif', '.gif'));
+
+
+}
+function disableGif(e) {
+    var src = $(e).attr("src")
+    $(e).attr('src', src.replace('.gif', '-image.gif'));
+
+}

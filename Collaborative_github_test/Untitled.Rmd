@@ -1,0 +1,15 @@
+---
+title: "collaborative github intro"
+author: "Anna Krystalli"
+date: "22 July 2016"
+output: html_document:
+    theme: paper
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+
+## issues
