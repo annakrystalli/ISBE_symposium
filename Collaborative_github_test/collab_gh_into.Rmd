@@ -3,23 +3,28 @@ title: "collaborative github intro"
 author: "Anna Krystalli"
 date: "22 July 2016"
 output: 
-    revealjs::revealjs_presentation:
-        theme: league
+ revealjs::revealjs_presentation:
+        theme: white
+        incremental: true
         highlight: pygments
+        keep_md: true
         center: true
         data-background-color: #476b6b
         smaller: true
         fig_height: 3
         reveal_options:
-            previewLinks: true
-
+            previewLinks: false
 ---
 
 # intro
 
-## github for collaboration (in RStudio)
+## 
 
-![](http://www.palermo.edu/Archivos_content/ingenieria/top/130712_git_github_topdenota1.jpg)
+### **github for collaboration (in RStudio)**
+
+<img src="http://www.palermo.edu/Archivos_content/ingenieria/top/130712_git_github_topdenota1.jpg" height="300px" />
+
+
 
 
 ## github & science
@@ -28,11 +33,13 @@ output:
 
 ## version control
 
-- long been used to maintain code repositories in the software industry.
-    - especially in open source software.
+- **long been used to maintain code repositories in the software industry**
+
+     > especially in open source software
     
-- science increasingly computational.
-    - demands for increased openness.
+- **science increasingly computational**
+
+    > demands for increased openness
 
 <br>
 
@@ -44,13 +51,14 @@ output:
 <br>
 <br>
 
-http://billmills.github.io/scienceXpython/
+
 
 ## modern science workflows
 
 ***can be overwhelming***
 
-![](images/workflows.png)
+<img src="images/workflows.png" width="500px" />
+
 
 ## succesful modern science workflows
 
@@ -68,9 +76,14 @@ http://billmills.github.io/scienceXpython/
 ## Rstudio for r users 
 
 ![](https://status.github.com/images/invertocat.png)
-![](https://pbs.twimg.com/profile_images/487277095681150976/aEp2vlJy.png)
+
+<img src="https://pbs.twimg.com/profile_images/487277095681150976/aEp2vlJy.png" width="300px" />
+
+
 
 ## invest in next generation science skills
+
+...and super-charge your teams
 
 ...or get left behind
 
@@ -107,25 +120,28 @@ traceability
 
 ## start with a repo
 
-## fork it
+<https://github.com/RSE-Sheffield/collaborative_github_exercise>
+
+<img src="images/repo.png" width="500px" />
+
+## fork repo
 
 - make your **own copy of the repository** on github
-- fork are linked and traceable
+        - fork are linked and traceable
+        
+- **clone it:** copy repo link
+    
 
 ## 
 
-## clone: copy repo link
-
-- use link to pull down a local copy
-- manage process through **projects** in **Rstudio**
-
-
+![](images/fork.gif)
 
 
 ## create new project
 
-- checkout from github
-- defaults to gthub repo name 
+- use repo link to checkout from github
+- manage process through **projects** in **Rstudio**
+
 
 
 ## 
@@ -134,8 +150,14 @@ traceability
 
 ## make a change
 
-- open **`params_tmpl.R`**
-- save as new `.R` in **`params/`** folder.
+- open **`params/params_tmpl.R`**
+- save as new `.R` script in **`params/`** folder. Use species name to name new file
+- edit file with parameters of your choice
+
+##
+
+![](images/edit.gif)
+
 
 ## commit
 
@@ -144,15 +166,29 @@ traceability
 
 ##
 
-
+![](images/commit.gif)
 
 ## push
 
 - push changes up to github
 
+##
+
+![](images/push.gif)
+
 ## create pull request
 
 - create request to merge fork to master
+
+##
+
+![](images/merge.gif)
+
+## check merge
+
+- check original repo to see your merged changes
+
+![](images/merged.png)
 
 # exercise
 
@@ -165,38 +201,18 @@ traceability
 
 
 
-ß
 
-$(function () {
-    // on page load  replace all src URLs
+## resources
 
-    $('.animated-gif').each(function (i, e) {
-        disableGif(e)
-    });
-});
-Reveal.addEventListener('slidechanged', initAnimatedGifs);
-Reveal.addEventListener('ready', initAnimatedGifs);
+[link to presentation]()
 
-function initAnimatedGifs(event) {
-    $('.animated-gif', event.currentSlide).each(function (i, e) {
-        enableGif(e)
-    });
+[Karthik Ram's article:](http://scfbm.biomedcentral.com/articles/10.1186/1751-0473-8-7) *'Git can facilitate greater reproducibility and increased transparency in science'*
 
-    if (event.previousSlide)
-        $('.animated-gif', event.previousSlide).each(function (i, e) {
-            disableGif(e)
+[Getting started with GitHub](http://jennybc.github.io/2014-05-12-ubc/ubc-r/session2.4_github.html) from materials for a [software carpentry course at UBC](http://jennybc.github.io/2014-05-12-ubc/)
 
-        });
-}
+[Slides for lecture](http://kbroman.org/Tools4RR/assets/lectures/04_git_withnotes.pdf)  Karl Broman gave on git/github, with notes
 
-function enableGif(e) {
-    var src = $(e).attr("src")
-    $(e).attr('src', src.replace('-image.gif', '.gif'));
+[joeyklee's friendly github intro](https://github.com/joeyklee/friendly-github-intro). *Mozilla Science Lab* workshop
 
 
-}
-function disableGif(e) {
-    var src = $(e).attr("src")
-    $(e).attr('src', src.replace('.gif', '-image.gif'));
 
-}
