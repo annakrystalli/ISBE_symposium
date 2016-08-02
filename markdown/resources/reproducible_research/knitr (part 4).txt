@@ -1,0 +1,156 @@
+So the processing of the knitr document is
+here, is, happens in a certain way. First the RMarkdown document is processed
+and creates a markdown document, then the markdown
+document is converted to HTML, and then the HTML file is what you view in the, in the Fisa final
+product. Generally speaking, you do not want to
+edit or mess with any of those secondary
+documents. You don't want to edit the markdown
+document or the HTML document because those are
+automatically generated. If you edit them, and then you reprocess
+the doc, the original document, all of your changes will be overridden in the
+HTML file or in the Markdown file. So only edit the RMarkdown file that's
+been, that contains the original text and the
+original Rcode. So here's another example, I've got my
+first knitr document and I have my name there as the author, and I've
+started a section called the introduction, and say here's some text, here's a code
+chunk, and I, and I named the code chunk simulation, and
+notice I added this option echo equals false. And so that means, that indicates the
+knitr that I don't want the code for this code chunk to be echoed in the output
+document, I just want the result to show. So here I got my level 1 heading indicated
+by the single hash, the level 2 heading in,
+indicated by the two hashes. I say don't echo the code. So now this is the output document, again,
+you could see that it looks like the original document that I
+had in the previous example. But I don't see the code, I'd only see the
+output, which is the mean. You could also hide the results, too, if
+you wanted too. In this case it doesn't make too much
+sense, but you could do it by adding the results, excuse me,
+the results equals hide option. And then when you see the output document,
+you see that all the text is there but there's no code, and
+there's no results. One of the nice things about knitr
+document is that you can write sentences and text. And if you need to fill in a number or a
+statistic or some sort of computation in the middle of sentence
+you can just add that directly into a
+sentence. So for example here I have a code chunk
+which computes the time and using the Sys.time() function and then
+I also generate a random number, okay? And so, now I can write a sentence. So that code check, I don't echo the
+codes, I don't want people to see that code, what I
+want people to see is the sentence immediately
+afterwards, says the current time is, and then I'll just plug in the
+current time. And then the next sentence is my favorite
+random number is, and then I'll just plug in a random
+number. So here, you see the output is, the
+current time is Wednesday September 4th and there's the
+time and 2013. And you can see my favorite random number
+is 1.1829. So that's how you can plug in computed
+variables, or computed results in the middle, inline
+with text. Another important aspect of any report
+probably is going to be some graphics. So you want to make plots of data or of, or maybe, or, or any sort of
+visualization. So you can easily add this into an inner
+document. So here I've simulated some data. And then in, in the first arc, code chunk
+I simulated some data. And in the second code chunk, I make a
+plot. So I use the par function to set the,
+kind of, the canvas with the margins. And the las option, then I call plot to
+make the, make the to generate the plot. And you notice I added an option here
+which adjusts the figurehead. And so actually fig.height equals four
+which makes a little bit of squished more than usual. So it would a be a rectangular type of
+plot rather than a square plot. And so what knitr produces is a little bit
+interesting. It creates an HTML file through the
+processing. So you can see that if you, if you're familiar HTML you can see this is basic
+HTML. I've cut off a lot of stuff from the top,
+so I've just put the body in. And this is basic HTML. I, you can see that down here at the
+bottom, you'll see there's an image tag. But rather than point to an actual file
+that's the image, it actually embeds the entire image into
+these HTML files itself. So you can see this is a Base64 encoded, image and so actually this HTML file
+stands alone, it doesn't, it doesn't depend on an external
+image files, which is not necessarily the most
+efficient format but it's actually quit useful because you can take
+this HTML file, give it to someone else, and they
+don't have to worry about whether they have,
+everything's, about whether they have these other files or not because
+everything's embedded. So here's the result as you can see I echoed the Rcode I had the result of the
+plot. And you see it's kind of this rectangular
+shape, and that's my scatter plot. So another handy thing you can do in a
+knitr document is make a table. And often you want to make a table that
+summarizes the result of some calculation, like a
+regression model. So, here I, I have a code chunk with load,
+with load some data. And I fiddled in your regression model to
+it. Here I'm modelling ozone concentrations,
+as a function of wind, temperature, and solar
+radiation. And I want to summarize the output from
+this Linear Regression model in a, kind of,
+pretty format. So, not just your standard, kind of, auto
+model format. So I'm going to use the xtable package,
+which is available on Crane. You have to install it separately, it
+doesn't come with R. And I'm going to use the xtable function
+to summarize the fit. And I'm going to use, and I'll print it to
+HTML. And you can see that in the resulting
+knitr, sorry, HTML output, after I process it with knitr, I get the code that
+I ran for the regression model. And I get the, it echoes the code, but at
+the very bottom here I can see that I got a table of regression coefficient,
+standard errors, T values and P values, which is formatted
+in HTML. And, so it, it'll be, kind of in a prettier format, rather than standard
+text mode. So sometimes, you want to set options for
+the entire document. So, these are called Global options. And, you want these options to apply to
+every single code chunk. So, maybe if you never want to echo the
+code, for example, you want every code chuck to say,
+eco equals fall. So it can be a bit of a pain to have to
+specify every single code chunk, so you might want to set a global option for something like
+that. And so, the way you can do that is you can
+create a separate code chunk in the, in the very
+beginning of the document. Here I've called it set options. And you can modify, there's a special
+object called opts underscore chunk, which has a function
+built into it called set. And if you call that set function, you can
+set the global option. So here I set echo equals to false and
+I've set the results equal to hide. So by default, every code chunk in this
+document will not echo the result the, sorry, not echo the code
+and will hide the results. So here I've got some code chunks here, I
+simulate some data, I make a plot. But when I'm, when you see, when I make
+the, when I see the HTML output I, I I'm sorry. Let me go back. I see in the first of all in the first
+code chunk I override the default for the, for the echo so I
+want to echo equals true. And then for the second, code chunk, I
+don't want to echo the plotting code. And so I, I let the default occur. So here I, the, the code that generates
+the data is echoed but the code that creates the plot
+is not echoed. So, some of the common options that are,
+that are good to remember, of course you can
+always go back to the documentation on the knitr
+website, so the results can be specified as either
+hide or asis. Asis means don't, don't postprocess the
+results, just show the, kind of the, the raw results from whatever
+the output is. Echo can be true or false. So if you want to echo the code or not. For figures usually you might want to
+modify the height and the width to be a specific type of size of fig.height and
+fig.width are common options to set there. So one special case is when you have a
+code chunk and the computation takes a really
+long time to run. Now every time you process the knitr
+document to look at the HTML output, you're going to have
+to run this computation. So one strategy to avoid having to sit
+around and wait a long time, is to cache the computation and so caching
+computations can be very useful for kind of complex code
+chunks. And so the idea is that for each code chunk, there's a special option
+called cache. You can set cache equal to TRUE and what
+will happen is that for that code chunk, the first time you process the
+document, it will have to run the code. But in order to figure out what the output
+is. But then what it will do is it will store
+that output on the disk and so that the next time you
+process the document, as long as nothing has changed, it will load
+the results from the disk, which is typically a lot faster than
+having to redo all the computation scans. So this, this will save you a lot of time
+if you're doing this over and over again. So if the data or the code or something
+changes, then you will, you will have to rerun the
+code again. There's really no getting around that. And so the caching will, will kind of
+update to represent the new results. If you're, if one code chunk depends on
+another code chunk that was previous to it, this dependency is not
+explicitly tracked by default. And so you'll have to make sure that if a previous code chunk has a dramatic change
+to it and the further and the downstream code chunk
+depends on it, then you rerun everything so that the cache doesn't
+get mixed into it. Chunks with significant side effects may
+not be cacheable. So if a, if the code in a chunk has some
+effect that kind of outside the document then it may
+not be possible to cache that. So just to summarize, I talk about knitr
+in this lecture, which is a useful tool for doing
+literate statistical programming. It can be used, that will allow you to put text, code, and data and output all into
+one document. It uses a mark down formatting language,
+which is kind of very simple and easy to learn. And, and it, and it creates HTML documents
+that you can view in any web browser. So I think it's a powerful tool for
+integrating text code. I mentioned, as I mentioned before,
+there's pros and cons. It's not a perfect tool. But it may be useful to learn and it's for
+generating [UNKNOWN] reports.

@@ -1,0 +1,37 @@
+---
+title: "ecoretriever"
+author: "Anna Krystalli"
+date: "1 August 2016"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warnings = F, message = F)
+```
+
+
+```{r}
+install.packages("traits")
+install.packages("letsR")
+library(traits)
+library(taxize)
+library(letsR)
+
+
+
+birdlife_habitat(22721692)
+birdlife_habitat(2482414)
+
+classification("Corax corax", db = 'itis')
+
+taxo <- downstream("Corvidae", downto = "Species", db = "gbif")
+
+lets.iucn(taxo[[1]]$canonicalname[1], count = T)
+lets.iucn.ha(taxo[[1]]$canonicalname[1], count = FALSE)
+
+lets.midpoint(taxo[[1]]$canonicalname[1])
+
+birdlife_habitat(taxo[[1]]$canonicalname[1])
+
+```
+

@@ -1,0 +1,70 @@
+So what is knitr? So knitr is this tool that I'm going to talk about that can help you make these
+reproducible documents. Knitr is an R package. It's written by Yihui Xie who, while he
+was a grad student at Iowa State. It's available on CRAN. If you happen to use the package R Studio
+it's actually built into R Studio, and so it's, it's integrated into the graphical user
+interface. And so, you don't even have to obtain it
+separately if you're using R-Studio. So, it supports for the documentation
+language. It supports, something called RMarkdown. It also supports, LaTeX and HTML. So these are three languages, that are
+commonly used. And then, it can export to PDF and HTML
+and and you can also export to other formats if using,
+using other external tools like Pandoc. It's built right into RStudio for your
+convenience, as I just mentioned. So, what do you need to use knitr?
+You need a recent version of R.
+You need a text editor. You can use the one that comes with
+RStudio if you happen to be using that, otherwise any old
+text editor will do. You need some support packages that are
+available from CRAN. These will be automatically downloaded if
+you use the install dot packages function. You need some knowledge of one of the
+three documentation languages. So, you need, need to know Markdown, LaTeX
+or HTML. And I will talk about Markdown here since it's a fairly simple language to
+understand. So, what is Markdown? Well, it's a simplified version of common
+markup languages. So LaTeX and HTML could be thought of as
+markup languages, where you take regular text and you kind
+of add things to it, add tags and other types of
+annotation to kind of tell, to indicate what you want to do
+with the text. One problem with markup languages is that
+they can be kind of like with they can be very difficult to read cause all this kind of
+tags and things that, that, that can, can, that
+can obscure the actual text. So the purpose of Markdown is just kind of simplify all that, make it easy to read
+just the text and only have a few kind of formatting elements that you need to enter
+into the document. There's no special editor required, just a
+standard text editor, Notepad, you know, whatever you
+want to use. There are simple, intuitive formatting
+elements and you can get all of the documentation at this
+website here. So, what is knitr good for in terms of
+creating reproducible documents? Well, personally, I think it's good for
+things like manuals. If you want to instruct someone on how to
+use a piece of software. Short or medium length technical documents so you're explaining some technical
+concept. tutorials, if you want to, again, this is
+like a manual, but maybe more extended, a
+tutorial on some topic. reports, they're especially useful for
+reports. If you have to, for example, every week generate a report on some database or some
+dataset. If you're running a study and you have subjects that are constantly being
+enrolled in the study and then maybe every week you
+generate a report on, it, it has summary statistics about about the
+study that these kinds of live documents are very useful because you can recalculate
+all the summary statistics as you generate the
+document. You don't have to do it by hand and then
+stick it into a report separately. And then also for data preprocessing. So, often it's useful if you're going to
+preprocess a dataset to create a clean dataset, to
+create a knitr type document where, that documents all of the things that you do to
+the dataset to make it clean. Maybe you remove some outliers, maybe you
+fill in some missing data, maybe you transform a
+variable here and there. All of that can be documented, in this
+kind of knitr's file, you know, where you simultaneously say what you did and
+then you actually do it in the code. What is knitr not good for? Well in, by, in my opinion, it's not very
+good for very long research articles, so if you're writing, writing a very
+complex, very involved analysis it, like I said
+before, because everything is stored in a single
+document, it can get a little bit confusing to kind of edit this document if there's a
+lot of code and a lot of text. If you have, if have very complex or
+time-consuming computations then knitr is often not a good format
+because you have to recompile this document every time you
+want to look at it. And so if your computations are very slow this will just kind of make everything
+slow. And furthermore if you have a document, if
+you want to create a document that requires
+very precise formatting. So if you have a special layout and the
+pictures have to go here and the text has to go here or
+something like that. Knitr is, again, not a super great tool
+for that because the formatting tends to be
+very ad hoc.

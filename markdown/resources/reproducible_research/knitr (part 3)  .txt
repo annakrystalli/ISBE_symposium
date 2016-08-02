@@ -1,0 +1,81 @@
+So how do we create a basic knitr
+document? So I'm going to talk about this in the
+context of R studio, because I think it's the easiest
+way to do it. There are other ways to do this, so this
+is not really exclusive to R studio but it's going to, I'll just, the example
+that I'll show you will be in R studio. So if you click on the New Document button
+on the upper left, you'll see that there are a
+variety of options. And you can click the R Markdown option to
+to create a new markdown file that'll have
+your text and codes. Here's your basic mark, R markdown
+document. So R markdown is basically markdown with R
+code embedded in it. You can see that what I have here is a basic symbol that indicates that I'm
+going to start a code chunk. So when I have the three back ticks, then
+the curly braces, and an r, and then a close curly brace, that
+indicates that I'm starting a code chunk. So as you can see I have three lines of R
+code here. Got set seed, that generates a random
+normal var variables. And then I just take the mean. And then I close this code chunk with
+three back ticks. And so that and so that's, and so you can
+see above this shaded area with the code, I've got text, so it's, the
+title is my first knitr document. And then I said, just a line of text that
+says, this is some text. And I say, here's a code chunk, and then I
+start the code chunk. So in R studio you'll have this document
+open. And you'll have the the code chunk and the
+text chunk there together. And and the idea is that if you want to process the knitr document, and create
+some human-readable output. So, you want to, the idea is that you
+want to run the R code, so that it, so you execute these
+three lines of R code. And then you want to put the output from
+that R code. In, in, embedded in your document. And what's the output of this R code?
+Well there's only one thing that happens when you calculate the
+mean. So it's going to generate the mean, and
+it'll be whatever the mean happens to be for that simulated
+data set. So it's very easy in R Studio, you can
+just push the Knit HTML button, and it will
+automatically run everything for you. There's if you're not using our studio the
+way you can do this is you can load the knitr
+package with a library function you can make sure
+your working director is set to wherever the aardvark
+down document is located typically aardvark down documents will
+have a capital RMD extension. It's not necessary but it's just a good
+way to identify these types of files. You can use the knit2html function if you
+want to create a webpage as your output. And you will automatically process the r
+markdown file and run the r code and put the r code within the
+file. And then, within r, if you want to open
+this in your web browser, you can use the
+browseURL function. It will create a new file. Sorry, the knit2html function will take
+your r markdown document, create a html file with the same name then, then you can
+open in your web browser. So here's the output that you would get,
+this is the HTML format output that you would
+get. You can see there's a title in bold, in
+large text, there's some regular text. The code is kind of in the shaded box, and
+then the output from that code is directly below, here you can
+see here the mean is 0.1089. So that's the output that came from the mean function. So in your MarkR, so that happens here is
+that neither takes your original RMarkdown document, we
+can see on the left here. And it processes it into a regular
+Markdown document. As you can see that the, one thing that
+happens is that, it takes your code. And then it, it reproduces the code in the
+regular markdown document. But you can see that the in the markdown document there's one extra piece,
+which is that the result of the code which is down here
+at the bottom. And so the result of evaluating the r code
+is added to the markdown document after
+evaluating the r code. So so when you create, first couple of things, first of all when you generate,
+when you create the new knitr document in RStudio,
+it will populate that document with some kind of
+generic filler text. So the first thing you probably want to do
+just delete it, because that's not going to be relevant to
+whatever you want to do, most likely. Code chunks begin, again, with the three
+back ticks the curly braces with an r. And you end a code chunk with three back
+ticks. All of your R code will go between these
+markers. Now you can have more than one code chunk. You can have as many code chunks as you
+want. So you don't have put all of the R code in
+within the code chunk. But any R code that you do have goes in a
+code chunk indicated by three back ticks. You can have names for your code chunks so
+you can name them after so immediately after
+the curly brace the r you can put a name it can be anything
+you want and then you can close it with a
+curly brace. And then by default the code in a code chunk will be echoed in
+the output document so just like in the in the HTML document you saw that it echoed
+the code and then it gave you the result of that
+code. By default, you will, all the code chunks
+you'll be able to see in the document, the code that
+was produced.
