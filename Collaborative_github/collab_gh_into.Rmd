@@ -204,7 +204,7 @@ traceability
 
 ## resources
 
-[link to presentation]()
+[link to presentation handout](https://github.com/annakrystalli/ISBE_symposium/blob/master/Collaborative_github_test/collab_gh_into.md)
 
 [Karthik Ram's article:](http://scfbm.biomedcentral.com/articles/10.1186/1751-0473-8-7) *'Git can facilitate greater reproducibility and increased transparency in science'*
 
