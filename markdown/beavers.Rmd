@@ -1,0 +1,96 @@
+---
+title: "beavers"
+author: "Anna Krystalli"
+date: "2 August 2016"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = F, message = F)
+```
+
+## Playing around with beavers datasets
+
+I like beavers so I thought I'd take a look at the `beavers` dataset in the `datasets` R package. Here's the description of the dataset in the [documentation](https://stat.ethz.ch/R-manual/R-devel/library/datasets/html/beavers.html):
+
+> Reynolds (1994) describes a small part of a study of the long-term temperature dynamics of beaver *Castor canadensis* in north-central Wisconsin. Body temperature was measured by telemetry every 10 minutes for four females, but data from a one period of less than a day for each of two animals is used there.
+
+
+Just to make sure everyone remembers just how cute they are, I'll include an image I found on the web:
+
+![](http://media-cache-ec0.pinimg.com/236x/a5/d0/04/a5d004659cc64687915eeccc61ba7669.jpg)
+
+<br>
+
+***
+
+### Load data
+
+So let's load the data into the global environment.
+
+```{r}
+data(beavers)
+```
+
+It looks like there's two datasets loaded. You can check by using the function `ls()` which returns the name of all objects currently loaded in the global environment.
+
+```{r}
+ls()
+```
+
+<br>
+
+***
+
+### Look at the data
+
+For starters I'd like to look at the data and hopefully be able to combine it into one dataset. I'd like to look at it nicely formatted so I'll use the kable function in `knitr` to print the two `data.frames` to `html`. I only need to have a look at a small subsection of each dataset so I'll use function `head` to see the top few rows of each.
+
+```{r}
+require(knitr)
+kable(head(beaver1), caption = "beaver1 dataset")
+kable(head(beaver2), caption = "beaver2 dataset")
+```
+
+The names of the variables in both datasets match so I'll go ahead and combine them into a single `data.frame` and have a look at the structure.
+
+```{r}
+beaver <- rbind(beaver1, beaver2)
+
+str(beaver)
+```
+
+<br>
+
+***
+
+### summarise the data
+
+As a quick sanity check I'll also have a look at the summary for the dataset:
+
+```{r}
+
+summary(beaver)
+
+```
+
+### plot some data
+
+
+```{r}
+plot(temp ~ time, data = beaver)
+
+require(ggplot2)
+ggplot(beaver,  aes(x = time, y = temp, colour = day)) + geom_point()
+```
+
+
+
+```{r}
+require(mgcv)
+gm <- gam(temp ~ s(time), family = gaussian, data = beaver)
+
+plot(gm)
+
+```
+
