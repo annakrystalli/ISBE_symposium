@@ -2,16 +2,24 @@
 title: "beavers"
 author: "Anna Krystalli"
 date: "2 August 2016"
-output: html_document
+output: 
+    html_document:
+        theme: paper
 ---
 
+***
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE, warning = F, message = F)
 ```
 
+<br>
+
 ## Playing around with beavers datasets
 
-I like beavers so I thought I'd take a look at the `beavers` dataset in the `datasets` R package. Here's the description of the dataset in the [documentation](https://stat.ethz.ch/R-manual/R-devel/library/datasets/html/beavers.html):
+I like beavers so I thought I'd take a look at the `beavers` dataset in the `datasets` R package. I'm just going to do some very preliminary sanity checks, like looking at the raw data and the structure of it as well as plotting it up. 
+
+
+Here's the description of the dataset in the [documentation](https://stat.ethz.ch/R-manual/R-devel/library/datasets/html/beavers.html):
 
 > Reynolds (1994) describes a small part of a study of the long-term temperature dynamics of beaver *Castor canadensis* in north-central Wisconsin. Body temperature was measured by telemetry every 10 minutes for four females, but data from a one period of less than a day for each of two animals is used there.
 
@@ -55,7 +63,8 @@ kable(head(beaver2), caption = "beaver2 dataset")
 The names of the variables in both datasets match so I'll go ahead and combine them into a single `data.frame` and have a look at the structure.
 
 ```{r}
-beaver <- rbind(beaver1, beaver2)
+beaver <- rbind(data.frame(beaver1, id = "beaver1"), 
+                data.frame(beaver2, id = "beaver2"))          
 
 str(beaver)
 ```
@@ -76,21 +85,10 @@ summary(beaver)
 
 ### plot some data
 
+Finally I'm going to plot the data up to have a look at it. I'm using package `ggplot2` and going to plot temperature as a function of time. I'll also colour the points according to beaver identity.
 
 ```{r}
-plot(temp ~ time, data = beaver)
-
 require(ggplot2)
-ggplot(beaver,  aes(x = time, y = temp, colour = day)) + geom_point()
-```
-
-
-
-```{r}
-require(mgcv)
-gm <- gam(temp ~ s(time), family = gaussian, data = beaver)
-
-plot(gm)
-
+ggplot(beaver,  aes(x = time, y = temp, colour = id)) + geom_point()
 ```
 
