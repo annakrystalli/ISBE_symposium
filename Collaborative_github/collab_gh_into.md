@@ -1,8 +1,18 @@
-# collaborative github intro
-Anna Krystalli  
-22 July 2016  
+## **Collaborative `github`**
 
-# intro
+***Anna Krystalli & Mike Croucher***
+
+<br>
+<br>
+<br>
+
+
+#### <span style="text-align: left">ISBE 2016</span>
+##### ***'Challenge for our generation: open, reproducible and reliable science'***
+
+<small>3rd August 2016, University of Exeter</small>
+
+
 
 ## 
 
@@ -63,15 +73,17 @@ Anna Krystalli
 
 ![](https://status.github.com/images/invertocat.png)
 
-<img src="https://pbs.twimg.com/profile_images/487277095681150976/aEp2vlJy.png" width="300px" />
+<img src="https://pbs.twimg.com/profile_images/487277095681150976/aEp2vlJy.png" width="200px" />
 
 
 
 ## invest in next generation science skills
 
-...and super-charge your teams
+<br>
 
-...or get left behind
+- ...and super-charge your teams!
+
+- ...or get left behind
 
 # empowering collaboration
 
@@ -190,7 +202,7 @@ traceability
 
 ## resources
 
-[link to presentation]()
+[link to presentation handout](https://github.com/annakrystalli/ISBE_symposium/blob/master/Collaborative_github_test/collab_gh_into.md)
 
 [Karthik Ram's article:](http://scfbm.biomedcentral.com/articles/10.1186/1751-0473-8-7) *'Git can facilitate greater reproducibility and increased transparency in science'*
 
