@@ -198,6 +198,11 @@ traceability
 - enter parameters for your species.
 
 
+## your mission
+- commit & push your changes
+- create a pull request to the master repo
+
+We'll merge all contributions and [plot them together at the end!](http://rpubs.com/annakrystalli/200121) 
 
 
 ## resources

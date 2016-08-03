@@ -1,22 +1,18 @@
----
-title: "collaborative github intro"
-author: "Anna Krystalli"
-date: "22 July 2016"
-output: 
- revealjs::revealjs_presentation:
-        theme: white
-        incremental: true
-        highlight: pygments
-        keep_md: true
-        center: true
-        data-background-color: #476b6b
-        smaller: true
-        fig_height: 3
-        reveal_options:
-            previewLinks: false
----
+## **Collaborative `github`**
 
-# intro
+***Anna Krystalli & Mike Croucher***
+
+<br>
+<br>
+<br>
+
+
+#### <span style="text-align: left">ISBE 2016</span>
+##### ***'Challenge for our generation: open, reproducible and reliable science'***
+
+<small>3rd August 2016, University of Exeter</small>
+
+
 
 ## 
 
@@ -77,15 +73,17 @@ output:
 
 ![](https://status.github.com/images/invertocat.png)
 
-<img src="https://pbs.twimg.com/profile_images/487277095681150976/aEp2vlJy.png" width="300px" />
+<img src="https://pbs.twimg.com/profile_images/487277095681150976/aEp2vlJy.png" width="200px" />
 
 
 
 ## invest in next generation science skills
 
-...and super-charge your teams
+<br>
 
-...or get left behind
+- ...and super-charge your teams!
+
+- ...or get left behind
 
 # empowering collaboration
 
@@ -200,6 +198,11 @@ traceability
 - enter parameters for your species.
 
 
+## your mission
+- commit & push your changes
+- create a pull request to the master repo
+
+We'll merge all contributions and [plot them together at the end!](http://rpubs.com/annakrystalli/200121) 
 
 
 ## resources
