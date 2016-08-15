@@ -1,5 +1,5 @@
 ---
-title: "beavers"
+title: "Playing around with beavers datasets"
 author: "Anna Krystalli"
 date: "2 August 2016"
 output: 
@@ -14,7 +14,6 @@ knitr::opts_chunk$set(echo = TRUE, warning = F, message = F)
 
 <br>
 
-## Playing around with beavers datasets
 
 I like beavers so I thought I'd take a look at the `beavers` dataset in the `datasets` R package. I'm just going to do some very preliminary sanity checks, like looking at the raw data and the structure of it as well as plotting it up. 
 
